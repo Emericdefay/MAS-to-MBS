@@ -1,7 +1,6 @@
 # MAS-to-MBS
-Transform MIDI file into Arduino Script to print on Music Box Sheet
+Transform MIDI file into Arduino Script to print on Music Box Sheet.
 
-Use MAS2MBS.py
 # Requirements
 You have to get some stuff to make the printer but if you just want to get
 the coordinates for your own Music Paper Sheet you just need to launch a special command.
@@ -14,19 +13,24 @@ Stuff required:
 
 # The program
 
-Type: <br/>`$ python MAS2MBS.py`.
-It create :
+Type: `$ python MAS2MBS.py`.<br/><br/>
+It create :  
 - A .txt file that can be open in Excel to see the print map named : "matrice_%midiFileName%.txt"
 - An Arduino's script : "script_arduino.ino" in arduino/
 
 # The .ino script
 You can change some values (I named few of them) to set your printer.
-Steppers'Variables:
+<br/><br/>
+ __Steppers'Variables:__ <br/>
 - stps : Value that change the rotation of your rollerBankMotor
 - stps2mm : Value that change the rotation of your headPrinterMotor
 - stps1turn : Value that change the rotation of your pincherMotor
-Delays' Variables:
+<br/>
+ __Delays'Variables:__ <br/>
 - delayBetweenActions : Value that change the time between each motor's action
 - delayTime : Value that change the speed of your motors
+<br/>
 
 # Notes Range
+If you look at your Music Box's Sheet, you can see the range of the notes :
+C,D,G,A,B,C1,D1,E1,F1,F1#,
