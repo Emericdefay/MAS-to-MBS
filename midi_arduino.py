@@ -126,6 +126,16 @@ def writingListElement(liste,chemin=os.path.dirname(os.path.realpath(sys.argv[0]
             writing.write("\n")
 
 def resetElement(chemin=os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino\\script_arduino.ino"):
+    ## TEST
+    print(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino")
+    if os.path.exists(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino"):
+        #print("Le dossier '{}' existe bien dans {}".format(name,os.path.dirname(os.path.realpath(sys.argv[0]))))
+        pass
+    else:
+        os.mkdir(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino")
+        print("Le dossier '{}' n'existe pas encore dans{}.\nCreation...".format("script_arduino",os.path.dirname(os.path.realpath(sys.argv[0]))))
+        PathToData()
+    ## TEST
     with open(chemin, 'w') as writing:
         writing.write("")
     print("Script Arduino Reset")
