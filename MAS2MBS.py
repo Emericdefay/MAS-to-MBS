@@ -10,7 +10,7 @@
 #Importations:
 import midi_arduino
 
-def start(name="\\default.mid"):
+def start(name="default.mid"):
     print("Program launched")
     print("\tOpen : " + name)
     midi_arduino.start(name)
@@ -18,4 +18,4 @@ def start(name="\\default.mid"):
     return print("Program done")
 
 if __name__ == '__main__':
-    start("home.mid")
+    start()
