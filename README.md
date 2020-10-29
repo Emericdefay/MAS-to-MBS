@@ -6,6 +6,8 @@ Transform MIDI file into Arduino Script to print on Music Box Sheet.
 - Change the arduino program construction : Make a serial reader 
 - Describe the modules, never enough description
 - Optimize the arduino matricial usage
+- Add the printer montage
+- Add pictures
 
 ## Requirements
 You have to get some stuff to make the printer but if you just want to get
@@ -25,7 +27,7 @@ It create :
 - A .txt file that can be open in Excel to see the print map named : "matrice_%midiFileName%.txt"
 - An Arduino's script : "script_arduino.ino" in arduino/
 <br/>
-__But since I am not a professionnal Dev. yet, you should launch MAS2MBS.py <br/> from an IDLE.__
+**But since I am not a professionnal Dev. yet, you should launch MAS2MBS.py <br/> from an IDLE.**
 
 ## The .ino script
 You can change some values (I named few of them) to set your printer.
