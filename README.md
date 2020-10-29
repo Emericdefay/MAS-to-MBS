@@ -33,5 +33,8 @@ You can change some values (I named few of them) to set your printer.
 <br/>
 
 # Notes Range
-If you look at your Music Box's Sheet, you can see the range of the notes :
-C,D,G,A,B,C1,D1,E1,F1,F1#,
+If you look at your Music Box's Sheet, you can see the range of the notes :<br/>
+C,D,G,A,B,C1,D1,E1,F1,F1#,G1,G1#,A1,A1#,B1,C2,C2#,D2,D2#,E2,F2,F2#,G2,G2#,A2,A2#,B2,C3,D3,E3<br/>
+Well, creating music at those octave is misleading and poor so I adapted it.<br/>
+If you want to print your .mid file, its notes has to be in:<br/>
+C2,D2,G2,A2,B2,C3,D3,E3,F3,F3#,G3,G3#,A3,A3#,B3,C4,C4#,D4,D4#,E4,F4,F4#,G4,G4#,A4,A4#,B4,C5,D5,E5<br/>
