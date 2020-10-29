@@ -20,27 +20,34 @@ import exploit
 
 # Premiere partie STATIQUE du code arduino.
 premierePartieDuCode = [
-"//Code généré par le script MAS2MBS.",
+"//Code generate by the script MAS2MBS.",
 "",
 "#define EN 8",
 "",
 "//Direction pin",
-"#define X_DIR 6 // headprinterMotor",
-"#define Y_DIR 5 // rollerBankMotor",
+"#define X_DIR 5 // rollerBankMotor",
+"#define Y_DIR 6 // headprinterMotor",
 "#define Z_DIR 7 // perforationMotor",
 "",
 "//Step pin",
-"#define X_STP 3 // headprinterMotor",
-"#define Y_STP 2 // rollerBankMotor",
+"#define X_STP 2 // rollerBankMotor",
+"#define Y_STP 3 // headprinterMotor",
 "#define Z_STP 4 // perforationMotor",
 "",
-"//DRV8825",
-"int delayTime=350; //Delay between each pause (uS)",
+"///////////////////////////////////////////////////////////////",
+"//                        MODIFIE                            //",
+"// Steppers' Variables :",
 "int stps=200;// Steps to move the base",
 "int stps2mm=200;// Steps to move between lines",
 "int stps1turn=200; // Steps to do 1 turn.",
+"//",
+"//Delays' Variables :",
+"int delayBetweenActions = 100; // Delay between each steps.",
+"int delayTime=350; // Speed of the Motors [350:8000]",
+"//                                                           //",
+"///////////////////////////////////////////////////////////////",
 "",
-"// Variables :",
+"// Do not change",
 "bool done = 0;"
 ]
 
@@ -50,7 +57,7 @@ deuxiemePartieDuCode = [
 "",
 "void step(boolean dir, byte dirPin, byte stepperPin, int steps){",
 "  digitalWrite(dirPin, dir);",
-"  delay(100);",
+"  delay(delayBetweenActions);",
 "  for (int i = 0; i < steps; i++) {",
 "    digitalWrite(stepperPin, HIGH);",
 "    delayMicroseconds(delayTime);",
@@ -72,7 +79,6 @@ deuxiemePartieDuCode = [
 "  for (int i = 0; i < numberColumns;i++) {",
 "    // Read the current column : note by note.",
 "    for(int j = 0; j < numberNotes;j++){",
-""
 "      // Move the headprinter.",
 "      step(false, Y_DIR, Y_STP, stps2mm); // Move by %stps2mm% steps.",
 "",
@@ -86,7 +92,6 @@ deuxiemePartieDuCode = [
 "",
 "    // Move the rollerBank at the next column.",
 "    step(false, X_DIR, X_STP, stps);",
-"",
 "  }",
 "}",
 "",
@@ -136,16 +141,16 @@ def resetElement(chemin=os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"ard
     """ Permet d'effacer le contenue d'un fichier.
     Pour ensuite réécrire du contenue sur un fichier vierge."""
     if os.path.exists(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino"):
-        print("Le dossier '{}' existe bien dans {}".format("script_arduino",os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\"))
+        print("\tBuffer : Folder '{}' already exist in {}".format("script_arduino",os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\"))
         pass
     else:
         os.mkdir(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino")
-        print("Le dossier '{}' n'existe pas encore dans{}.\nCreation...".format("script_arduino",os.path.dirname(os.path.realpath(sys.argv[0]))))
+        print("\tBuffer : Folder '{}' doesn't exist in {}. : Created".format("script_arduino",os.path.dirname(os.path.realpath(sys.argv[0]))))
         resetElement(chemin)
 
     with open(chemin, 'w') as writing:
         writing.write("")
-    print("script_Arduino.ino : Reset")
+    print("\tFile : script_arduino.ino : Reset")
 
 def start(name="default.mid"):
     """ Ecrit le script Arduino à partir des elements de la matrice et des lignes de codes Arduino pré-établis. """
@@ -156,7 +161,6 @@ def start(name="default.mid"):
     writingDynamicElement("int numberNotes = {};".format(len(matrice[0])))
     writingDynamicElement("\n")
     writingDynamicElement("// List")
-    writingDynamicElement("\n")
     writingDynamicElement("bool matriceMidi[][{}] = {}".format(len(matrice[0]),"{"))
     writingListElement(matrice)
     writingStaticElement(deuxiemePartieDuCode)
