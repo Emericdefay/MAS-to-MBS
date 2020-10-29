@@ -26,6 +26,7 @@ You can change some values (I named few of them) to set your printer.
 - stps2mm : Value that change the rotation of your headPrinterMotor
 - stps1turn : Value that change the rotation of your pincherMotor
 <br/>
+
  __Delays'Variables:__ <br/>
 - delayBetweenActions : Value that change the time between each motor's action
 - delayTime : Value that change the speed of your motors
