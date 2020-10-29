@@ -16,11 +16,12 @@ import exploit
 
 # #
 # Transcription en language Arduino. (90%)
-#
+# #
 
-# Les commentaires sont transcrits en langage Arduino.
-
+# Premiere partie STATIQUE du code arduino.
 premierePartieDuCode = [
+"//Code généré par le script MAS2MBS.",
+"",
 "#define EN 8",
 "",
 "//Direction pin",
@@ -34,26 +35,27 @@ premierePartieDuCode = [
 "#define Z_STP 4 // perforationMotor",
 "",
 "//DRV8825",
-"int delayTime=500; //Delay between each pause (uS)",
-"int stps=1000;// Steps to move the base",
-"int stps2mm=500;// Steps to move between lines",
-"int stps1turn=2000; // Steps to do 1 turn.",
+"int delayTime=350; //Delay between each pause (uS)",
+"int stps=200;// Steps to move the base",
+"int stps2mm=200;// Steps to move between lines",
+"int stps1turn=200; // Steps to do 1 turn.",
 "",
 "// Variables :",
 "bool done = 0;"
 ]
 
+# Deuxieme partie STATIQUE du code arduino.
 deuxiemePartieDuCode = [
 "};",
 "",
 "void step(boolean dir, byte dirPin, byte stepperPin, int steps){",
 "  digitalWrite(dirPin, dir);",
-"  delay(1000);",
+"  delay(100);",
 "  for (int i = 0; i < steps; i++) {",
 "    digitalWrite(stepperPin, HIGH);",
 "    delayMicroseconds(delayTime);",
 "    digitalWrite(stepperPin, LOW);",
-"   delayMicroseconds(delayTime);",
+"    delayMicroseconds(delayTime);",
 "  }",
 "}",
 "",
@@ -93,12 +95,13 @@ deuxiemePartieDuCode = [
 "    printing();",
 "    done = true;",
 "  }",
-"  delay(1000);",
+"  delay(10000);",
 "}"
 ]
 
 
 def writingStaticElement(liste,chemin=os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino\\script_arduino.ino"):
+    """ Ecris du texte à partir d'une liste de chaines dans le fichier donné. """
     with open(chemin, 'a') as writing:
         for ligne in liste:
             writing.write(ligne)
@@ -107,12 +110,16 @@ def writingStaticElement(liste,chemin=os.path.dirname(os.path.realpath(sys.argv[
     pass
 
 def writingDynamicElement(texte,chemin=os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino\\script_arduino.ino"):
+    """ Permet d'écrire du texte dans un fichier donné. """
     with open(chemin, 'a') as writing:
         writing.write(texte)
         writing.write("\n")
     pass
 
 def writingListElement(liste,chemin=os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino\\script_arduino.ino"):
+    """ Ecrit des éléments d'une liste - Non réutilisable en l'état.
+    N'a qu'un seul but : écrire les données Midi dans Arduino sous la forme :
+    {{0,1,0},{1,1,0},{0,0,0},...}"""
     with open(chemin, 'a') as writing:
         for j in range(len(liste)):
             writing.write("{")
@@ -126,21 +133,22 @@ def writingListElement(liste,chemin=os.path.dirname(os.path.realpath(sys.argv[0]
             writing.write("\n")
 
 def resetElement(chemin=os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino\\script_arduino.ino"):
-    ## TEST
-    print(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino")
+    """ Permet d'effacer le contenue d'un fichier.
+    Pour ensuite réécrire du contenue sur un fichier vierge."""
     if os.path.exists(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino"):
-        #print("Le dossier '{}' existe bien dans {}".format(name,os.path.dirname(os.path.realpath(sys.argv[0]))))
+        print("Le dossier '{}' existe bien dans {}".format("script_arduino",os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\"))
         pass
     else:
         os.mkdir(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino")
         print("Le dossier '{}' n'existe pas encore dans{}.\nCreation...".format("script_arduino",os.path.dirname(os.path.realpath(sys.argv[0]))))
-        PathToData()
-    ## TEST
+        resetElement(chemin)
+
     with open(chemin, 'w') as writing:
         writing.write("")
-    print("Script Arduino Reset")
+    print("script_Arduino.ino : Reset")
 
 def start(name="default.mid"):
+    """ Ecrit le script Arduino à partir des elements de la matrice et des lignes de codes Arduino pré-établis. """
     matrice = exploit.start(name)
     resetElement()
     writingStaticElement(premierePartieDuCode)
@@ -154,4 +162,5 @@ def start(name="default.mid"):
     writingStaticElement(deuxiemePartieDuCode)
 
 if __name__ == '__main__':
+    # Debuggage.
     start()
