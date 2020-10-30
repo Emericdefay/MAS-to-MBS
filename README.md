@@ -3,7 +3,7 @@ Transform MIDI file into Arduino Script to print on Music Box Sheet.
 
 ## Todo
 
-- [ ] Change the arduino program construction : Make a serial reader - Work in Progress- successfully linked Arduino & Arduino, some issues. (70%) 
+- [ ] Change the arduino program construction : Make a serial reader - Work in Progress! (70%) 
 - [ ] Describe the modules, never enough description  (70%)
 - [ ] Optimize the arduino matricial usage, reducing the memory used - On it.
 - [ ] Add the printer montage - Need pieces. Almost done the puncher.
