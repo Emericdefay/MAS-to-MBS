@@ -16,7 +16,7 @@ Stuff required:
 - Arduino (Mega or another with enough storage to store the amout of bytes)
 - A Shield CNC with 3 motor drivers (for Nema 17)
 - 3x Nema 17
-- The gear of your printer : You need to make the rollerbank, the head and the puncher. With that, you need to defined the parameters in you .ino file (stps, stps2mm & stps1turn).
+- The gear of your printer : You need to make the rollerbank, the head and the puncher. With that, you need to defined the parameters in you .ino file. Look at ""The .ino script" Section.
 - Midi files : There is already one file ("default.mid") but if you want to put yours, you have to be aware of the range. Look at the "Notes Range" Section.
 
 ## The program
