@@ -12,7 +12,7 @@ Transform MIDI file into Arduino Script to print on Music Box Sheet.
 ## Requirements
 You have to get some stuff to make the printer but if you just want to get
 the coordinates for your own Music Paper Sheet you just need to launch the program and use matrice_%midiFileName%.txt.<br/>
-Stuff required:
+### Stuff required:
 - Arduino (Mega or another with enough storage to store the amout of bytes)
 - A Shield CNC with 3 motor drivers (for Nema 17)
 - 3x Nema 17
@@ -55,7 +55,7 @@ If you look at your Music Box's Sheet, you can see the range of the notes :<br/>
 > C,D,G,A,B,C1,D1,E1,F1,F1#,G1,G1#,A1,A1#,B1,C2,C2#,D2,D2#,E2,F2,F2#,G2,G2#,A2,A2#,B2,C3,D3,E3<br/>
 
 Well, creating music at those octaves is misleading and poor so I adapted it.
-If you want to print your .mid file, its notes has to be in:<br/>
+If you want to print your .mid file, its notes have to be in:<br/>
 > C2,D2,G2,A2,B2,C3,D3,E3,F3,F3#,G3,G3#,A3,A3#,B3,C4,C4#,D4,D4#,E4,F4,F4#,G4,G4#,A4,A4#,B4,C5,D5,E5<br/>
 
 I could convert the notes from other octaves but it could figure a bad quality sheet. 
