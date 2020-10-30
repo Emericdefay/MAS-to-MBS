@@ -26,7 +26,7 @@ the coordinates for your own Music Paper Sheet you just need to launch the progr
 > Type: `$ python MAS2MBS.py`.<br/><br/>  
 
 It create :  
-- A .txt file that can be open in Excel to see the print map named : "matrice_%midiFileName%.txt"
+- A .txt file that can be open in Excel to see the print map named : "matrice_default.txt"
 - An Arduino's script : "script_arduino.ino" in arduino/
 <br/>
 Then compile the script_arduino.ino on an Arduino and it will print. Make sure to get the requirements.
