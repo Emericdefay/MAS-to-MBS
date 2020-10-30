@@ -11,7 +11,7 @@ Transform MIDI file into Arduino Script to print on Music Box Sheet.
 
 ## Requirements
 You have to get some stuff to make the printer but if you just want to get
-the coordinates for your own Music Paper Sheet you just need to launch the program and use matrice_%midiFileName%.txt.
+the coordinates for your own Music Paper Sheet you just need to launch the program and use matrice_%midiFileName%.txt.<br/>
 Stuff required:
 - Arduino (Mega or another with enough storage to store the amout of bytes)
 - A Shield CNC with 3 motor drivers (for Nema 17)
@@ -23,7 +23,7 @@ Stuff required:
 
 ##### How to use it?
 ###### If you want to see a partition by default.
-Type: `$ python MAS2MBS.py`.<br/><br/>
+> Type: `$ python MAS2MBS.py`.<br/><br/>
 It create :  
 - A .txt file that can be open in Excel to see the print map named : "matrice_%midiFileName%.txt"
 - An Arduino's script : "script_arduino.ino" in arduino/
@@ -31,7 +31,7 @@ It create :
 Then compile the script_arduino.ino on an Arduino and it will print. Make sure to get the requirements.
 
 ###### If you want to make your own partition
-Put your Midi file on /midi. Launch MAS2MBS.py from an IDLE,  at the line 20, write start("%YourMidiFileName%.mid") and compile.<br/><br/>
+> Put your Midi file on /midi. Launch MAS2MBS.py from an IDLE,  at the line 20, write start("%YourMidiFileName%.mid") and compile.<br/><br/>
 It create :  
 - A .txt file that can be open in Excel to see the print map named : "matrice_%midiFileName%.txt"
 - An Arduino's script : "script_arduino.ino" in arduino/
@@ -56,6 +56,6 @@ If you look at your Music Box's Sheet, you can see the range of the notes :<br/>
 
 Well, creating music at those octaves is misleading and poor so I adapted it.
 If you want to print your .mid file, its notes has to be in:<br/>
->C2,D2,G2,A2,B2,C3,D3,E3,F3,F3#,G3,G3#,A3,A3#,B3,C4,C4#,D4,D4#,E4,F4,F4#,G4,G4#,A4,A4#,B4,C5,D5,E5<br/>
+> C2,D2,G2,A2,B2,C3,D3,E3,F3,F3#,G3,G3#,A3,A3#,B3,C4,C4#,D4,D4#,E4,F4,F4#,G4,G4#,A4,A4#,B4,C5,D5,E5<br/>
 
 I could convert the notes from other octaves but it could figure a bad quality sheet. 
