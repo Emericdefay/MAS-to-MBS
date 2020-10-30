@@ -23,7 +23,8 @@ the coordinates for your own Music Paper Sheet you just need to launch the progr
 
 ##### How to use it?
 ###### If you want to see a partition by default.
-> Type: `$ python MAS2MBS.py`.<br/><br/>
+> Type: `$ python MAS2MBS.py`.<br/><br/>  
+
 It create :  
 - A .txt file that can be open in Excel to see the print map named : "matrice_%midiFileName%.txt"
 - An Arduino's script : "script_arduino.ino" in arduino/
@@ -31,7 +32,8 @@ It create :
 Then compile the script_arduino.ino on an Arduino and it will print. Make sure to get the requirements.
 
 ###### If you want to make your own partition
-> Put your Midi file on /midi. Launch MAS2MBS.py from an IDLE,  at the line 20, write start("%YourMidiFileName%.mid") and compile.<br/><br/>
+> Put your Midi file on /midi. Open MAS2MBS.py from an IDLE,  at the line 20, write start("%YourMidiFileName%.mid") and compile.<br/><br/>
+
 It create :  
 - A .txt file that can be open in Excel to see the print map named : "matrice_%midiFileName%.txt"
 - An Arduino's script : "script_arduino.ino" in arduino/
@@ -39,7 +41,7 @@ It create :
 Then compile the script_arduino.ino on an Arduino and it will print. Make sure to get the requirements.
 
 ## The .ino script
-You can change some values (I named few of them) to set your printer.
+You can change some values to set your printer :
 
 __Steppers'Variables:__ <br/>
 - stps : Value that change the rotation of your rollerBankMotor
