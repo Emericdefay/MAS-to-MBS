@@ -41,7 +41,7 @@ __Delays'Variables:__ <br/>
 - delayBetweenActions : Value that change the time between each motor's action
 - delayTime : Value that change the speed of your motors
 
-# Notes Range
+## Notes Range
 If you look at your Music Box's Sheet, you can see the range of the notes :<br/>
 > C,D,G,A,B,C1,D1,E1,F1,F1#,G1,G1#,A1,A1#,B1,C2,C2#,D2,D2#,E2,F2,F2#,G2,G2#,A2,A2#,B2,C3,D3,E3<br/>
 
