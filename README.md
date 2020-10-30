@@ -3,11 +3,11 @@ Transform MIDI file into Arduino Script to print on Music Box Sheet.
 
 ## Todo
 
-[o] Change the arduino program construction : Make a serial reader 
-[o] Describe the modules, never enough description
-[o] Optimize the arduino matricial usage
-[o] Add the printer montage
-[o] Add pictures
+[ ] Change the arduino program construction : Make a serial reader 
+[ ] Describe the modules, never enough description
+[ ] Optimize the arduino matricial usage
+[ ] Add the printer montage
+[ ] Add pictures
 
 ## Requirements
 You have to get some stuff to make the printer but if you just want to get
