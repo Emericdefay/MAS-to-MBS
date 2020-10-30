@@ -3,19 +3,19 @@ Transform MIDI file into Arduino Script to print on Music Box Sheet.
 
 ## Todo
 
-- Change the arduino program construction : Make a serial reader 
-- Describe the modules, never enough description
-- Optimize the arduino matricial usage
-- Add the printer montage
-- Add pictures
+[o] Change the arduino program construction : Make a serial reader 
+[o] Describe the modules, never enough description
+[o] Optimize the arduino matricial usage
+[o] Add the printer montage
+[o] Add pictures
 
 ## Requirements
 You have to get some stuff to make the printer but if you just want to get
-the coordinates for your own Music Paper Sheet you just need to launch a special command.
+the coordinates for your own Music Paper Sheet you just need to launch the program and use matrice_%midiFileName%.txt.
 Stuff required:
 - Arduino (Mega or another with enough storage to store the amout of bytes)
 - A Shield CNC with 3 motor drivers (for Nema 17)
-- 3 Nema 17
+- 3x Nema 17
 - The gear of your printer : You need to make the rollerbank, the head and the puncher. With that, you need to defined the parameters in you .ino file (stps, stps2mm & stps1turn).
 - Midi files : There is already one file ("default.mid") but if you want to put yours, you have to be aware of the range. Look at the "Notes Range" Section.
 
