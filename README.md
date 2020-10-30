@@ -31,7 +31,12 @@ It create :
 Then compile the script_arduino.ino on an Arduino and it will print. Make sure to get the requirements.
 
 ###### If you want to make your own partition
-Put your Midi file on /midi. Launch MAS2MBS.py from an IDLE,  at the line 20, write start("%YourMidiFileName%.mid")
+Put your Midi file on /midi. Launch MAS2MBS.py from an IDLE,  at the line 20, write start("%YourMidiFileName%.mid") and compile.<br/><br/>
+It create :  
+- A .txt file that can be open in Excel to see the print map named : "matrice_%midiFileName%.txt"
+- An Arduino's script : "script_arduino.ino" in arduino/
+<br/>
+Then compile the script_arduino.ino on an Arduino and it will print. Make sure to get the requirements.
 
 ## The .ino script
 You can change some values (I named few of them) to set your printer.
