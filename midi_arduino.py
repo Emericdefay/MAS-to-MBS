@@ -27,19 +27,19 @@ premierePartieDuCode = [
 "//Direction pin",
 "#define X_DIR 5 // rollerBankMotor",
 "#define Y_DIR 6 // headprinterMotor",
-"#define Z_DIR 7 // perforationMotor",
+"#define Z_DIR 7 // puncherMotor",
 "",
 "//Step pin",
 "#define X_STP 2 // rollerBankMotor",
 "#define Y_STP 3 // headprinterMotor",
-"#define Z_STP 4 // perforationMotor",
+"#define Z_STP 4 // puncherMotor",
 "",
 "///////////////////////////////////////////////////////////////",
 "//                        MODIFIE                            //",
 "// Steppers' Variables :",
-"int stps=200;// Steps to move the base",
-"int stps2mm=200;// Steps to move between lines",
-"int stps1turn=200; // Steps to do 1 turn.",
+"int stps=200;// Steps to move the rollerBankMotor",
+"int stps2mm=200;// Steps to move headprinterMotor",
+"int stps1turn=200; // Steps to do 1 turn on the puncherMotor",
 "//",
 "//Delays' Variables :",
 "int delayBetweenActions = 100; // Delay between each steps.",
@@ -84,11 +84,12 @@ deuxiemePartieDuCode = [
 "",
 "      // If there is a note on the current column : Perforate.",
 "      if(matriceMidi[i][j]==1){",
-"        step(false, Z_DIR, Z_STP, stps1turn); // PerforationMotor 1 turn",
+"        step(false, Z_DIR, Z_STP, stps1turn); // PuncherMotor 1 turn",
 "      }",
 "    }",
 "    // Move the headprinter to the default location.",
 "    step(true, Y_DIR, Y_STP, numberNotes*stps2mm);",
+"",
 "",
 "    // Move the rollerBank at the next column.",
 "    step(false, X_DIR, X_STP, stps);",
@@ -141,16 +142,18 @@ def resetElement(chemin=os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"ard
     """ Permet d'effacer le contenue d'un fichier.
     Pour ensuite réécrire du contenue sur un fichier vierge."""
     if os.path.exists(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino"):
-        print("\tBuffer : Folder '{}' already exist in {}".format("script_arduino",os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\"))
-        pass
+        print("\tBuffer : Folder '{}' exist in {}".format("script_arduino",os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\"))
+
+        with open(chemin, 'w') as writing:
+            writing.write("")
+        print("\tFile : script_arduino.ino : Reset")
+
     else:
         os.mkdir(os.path.dirname(os.path.realpath(sys.argv[0]))+"\\"+"arduino\\script_arduino")
         print("\tBuffer : Folder '{}' doesn't exist in {}. : Created".format("script_arduino",os.path.dirname(os.path.realpath(sys.argv[0]))))
         resetElement(chemin)
 
-    with open(chemin, 'w') as writing:
-        writing.write("")
-    print("\tFile : script_arduino.ino : Reset")
+
 
 def start(name="default.mid"):
     """ Ecrit le script Arduino à partir des elements de la matrice et des lignes de codes Arduino pré-établis. """

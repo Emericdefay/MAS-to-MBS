@@ -30,6 +30,7 @@ start(name)
 
 ## Lit le fichier midi et le converti en un tableau [hex,hex,...]
 def reader(midi_file):
+    """ Reads the midi file and converts it on ["hex","hex",...] "hex" are str hex without "0x". """
     # Entrée : Fichier.mid
     # Sortie : [hex,hex,...]
     with open(midi_file,"rb") as raw_midi:
@@ -38,12 +39,14 @@ def reader(midi_file):
 
 ## Depuis la racine de se fichier, cherche le dossier midi
 def path_to_midi():
+    """ Find the path of /midi """
     # Sortie : X:\.\..\midi\
     midi_base = os.path.dirname(os.path.realpath(sys.argv[0]))
     sys.path.append(midi_base)
     return midi_base + "\midi\\"
 
 def midi_file(name):
+    """ Find the midiFile.mid on ../midi/ """
     # Entrée : fichier_midi.mid
     # Sortie : X:\.\..\midi\fichier_midi.mid
     if(name[-4:] != ".mid"):
@@ -52,6 +55,7 @@ def midi_file(name):
         return path_to_midi()+name
 
 def conv_hexTab_to_int(tableau):
+    """ Converts a list of "hex" ("01") into an int. [0x11,0x22] -> 51"""
     # Entrée : [hex,hex,...] en str
     # Sortie : int
     conv = "0x"
@@ -61,7 +65,7 @@ def conv_hexTab_to_int(tableau):
     return conv
 
 def midi_convertor(tableau):
-    # voir site : http://manivelles.occitanes.pagesperso-orange.fr/site-arrangements/Solfege/Fichiers-midi2.html
+    """Get the LONELY midi pist, ready to be exploited"""
     # Entrée : Tableau [hex,hex,hex,...]
     # Sortie : tableau [[note,durée],[note,durée],...]
 
