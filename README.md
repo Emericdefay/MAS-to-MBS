@@ -43,7 +43,7 @@ Then compile the serialReaderPrinter.ino on your Arduino and then <br/><br/>
 > type: `$ python -c 'import MAS2MBS; MAS2MBS.createSerialMaker("%YourMidiFileName%.mid","%ArduinoPORT%",True)'`.<br/>
 
 It will communicate with your arduino and sends notes one by one. This method is still in developpement. (Work)<br/> 
-Make sure to get the requirements.<br/>
+Make sure to get the requirements.<br/><br/>
 I invite you use an IDLE to control it and look at the functions.
 
 ## The .ino script
