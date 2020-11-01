@@ -31,7 +31,7 @@ def printingLap(liste=[1 for val in range(30)],arduino_COM="COM3",lap=1,allLaps=
 
                 time.sleep(1)
                 if b'9' in port_serie.readline(port_serie.inWaiting()):
-                    print("\t\tStart printing Lap n°{}".format(lap))
+                    print("\t\tStart printing Lap n°{} :".format(lap))
 
                     while (b'4' not in port_serie.readline(port_serie.inWaiting())):
 

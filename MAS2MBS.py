@@ -12,6 +12,7 @@ import midi_arduino
 import serialSender
 import serialReaderMaker
 import serial
+import sys
 
 def createScript(name="default.mid"):
     try:
@@ -43,5 +44,6 @@ def createSerialMaker(name="default.mid",arduino_COM="COM3",warningMsg=True):
         pass
 
 if __name__ == '__main__':
-    #createScript() #Create the script_arduino.ino
-    createSerialMaker("default.mid","COM3",True) # Use Serial Method, when storage of board is not enough.
+    #createScript("default.mid") #Create the script_arduino.ino
+    #createSerialMaker("default.mid","COM3",True) # Use Serial Method, when storage of board is not enough.
+    pass
