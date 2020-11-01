@@ -23,7 +23,7 @@ the coordinates for your own Music Paper Sheet you just need to launch the progr
 
 ##### How to use it?
 Use your commands line you be in the root of the MAS-to-MBS file.
-###### If your Arduino board have enough space (or if you just wanna create the map):
+###### If your Arduino board has enough space (or if you just wanna create the map):
 > Type: `$ python -c 'import MAS2MBS; MAS2MBS.createScript("%YourMidiFileName%.mid")'`.<br/><br/>  
 
 It creates :  
@@ -32,17 +32,17 @@ It creates :
 <br/>
 Then compile the script_arduino.ino on an Arduino and it will print. Make sure to get the requirements.
 
-###### If your board don't have enough space :
+###### If your board doesn't have enough space :
 > Type: `$ python -c 'import serialReaderMaker; serialReaderMaker.start()'`.<br/><br/>  
 
 It creates :  
 - An Arduino's script : "serialReaderPrinter.ino" in arduino/
 <br/>
-Then compile the serialReaderPrinter.ino on an Arduino and then <br/><br/> 
+Then compile the serialReaderPrinter.ino on your Arduino and then <br/><br/> 
 
-> Type: `$ python -c 'import MAS2MBS; MAS2MBS.createSerialMaker("%YourMidiFileName%.mid","%ArduinoPORT%",True)'`.<br/>
+> type: `$ python -c 'import MAS2MBS; MAS2MBS.createSerialMaker("%YourMidiFileName%.mid","%ArduinoPORT%",True)'`.<br/>
 
-It will communicate with your arduino and send notes one by one. This method is still in developpement. (Work)<br/> 
+It will communicate with your arduino and sends notes one by one. This method is still in developpement. (Work)<br/> 
  **Make sure to get the requirements.**
 
 ## The .ino script
