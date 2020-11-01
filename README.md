@@ -49,12 +49,12 @@ I invite you use an IDLE to control it and look at the functions.
 ## The .ino script
 You can change some values to set your printer :
 
-__Steppers'Variables:__ <br/>
+__Steppers Variables:__ <br/>
 - stps : Value that changes the rotation of your rollerBankMotor
 - stps2mm : Value that changes the rotation of your headPrinterMotor
 - stps1turn : Value that changse the rotation of your pincherMotor
 
-__Delays'Variables:__ <br/>
+__Delays Variables:__ <br/>
 - delayBetweenActions : Value that changes the time between each motor action
 - delayTime : Value that changes the speed of your motors
 
