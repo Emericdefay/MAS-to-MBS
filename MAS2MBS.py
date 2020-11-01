@@ -9,13 +9,27 @@
 
 #Importations:
 import midi_arduino
+import serialSender
+import serialReaderMaker
+import serial
 
-def start(name="default.mid"):
+def createScript(name="default.mid"):
     print("Program launched :")
     print("\tOpen : " + name)
     midi_arduino.start(name)
     print("\tFile : script_arduino.ino : Created on /arduino/script_arduino/")
-    return print("Program done.")
+    print("Program done.\n")
+    return print("If the script_arduino.ino is to much for your arduino board, use createSerialMaker()")
+
+def createSerialMaker(name="default.mid",arduino_COM="COM3",warningMsg=True):
+    print("Using Serial method.")
+    serialReaderMaker.start()
+    try:
+        serialSender.start(name,arduino_COM,warningMsg)
+    except serial.serialutil.SerialException:
+        print("Not the arduino_COM.")
+        pass
 
 if __name__ == '__main__':
-    start()
+    #createScript() #Create the script_arduino.ino
+    createSerialMaker("default.mid","COM3",False) # Use Serial Method, when storage of board is not enough.
