@@ -46,7 +46,7 @@ It will communicate with your arduino and sends notes one by one. This method is
 Make sure to get the requirements.<br/><br/>
 I invite you use an IDLE to control it and look at the functions.
 
-## The .ino script
+## The .ino scripts
 You can change some values to set your printer :
 
 __Steppers Variables:__ <br/>
