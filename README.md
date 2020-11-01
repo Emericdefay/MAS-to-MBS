@@ -22,8 +22,8 @@ the coordinates for your own Music Paper Sheet you just need to launch the progr
 ## The program
 
 ##### How to use it?
-###### If you want to see a partition by default.
-> Type: `$ python MAS2MBS.py`.<br/><br/>  
+###### If your Arduino board have enough space (or if you just wanna create the map):
+> Type: `$ python -c 'import MAS2MBS; MAS2MBS.createScript("%YourMidiFileName%.mid")'`.<br/><br/>  
 
 It creates :  
 - A .txt file that can be open in Excel to see the print map named : "matrice_default.txt"
@@ -31,14 +31,16 @@ It creates :
 <br/>
 Then compile the script_arduino.ino on an Arduino and it will print. Make sure to get the requirements.
 
-###### If you want to make your own partition
-> Put your Midi file on /midi. Open MAS2MBS.py from an IDLE,  at the line 20, write start("%YourMidiFileName%.mid") and compile.<br/><br/>
+###### If your board don't have enough space :
+> Type: `$ python -c 'import serialReaderMaker; serialReaderMaker.start()'`.<br/><br/>  
 
 It creates :  
-- A .txt file that can be open in Excel to see the print map named : "matrice_%midiFileName%.txt"
-- An Arduino's script : "script_arduino.ino" in arduino/
+- An Arduino's script : "serialReaderPrinter.ino" in arduino/
 <br/>
-Then compile the script_arduino.ino on an Arduino and it will print. Make sure to get the requirements.
+Then compile the serialReaderPrinter.ino on an Arduino and then
+> Type: `$ python -c 'import MAS2MBS; MAS2MBS.createSerialMaker("%YourMidiFileName%.mid","%ArduinoPORT%",True)'`.<br/><br/>
+It will communicate with your arduino and send notes one by one. This method is still in developpement. (Work)
+ **Make sure to get the requirements.**
 
 ## The .ino script
 You can change some values to set your printer :
