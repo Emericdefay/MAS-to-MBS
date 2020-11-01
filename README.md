@@ -3,10 +3,10 @@ Transform MIDI file into Arduino Script to print on Music Box Sheet.
 
 ## Todo
 
-- [ ] Change the arduino program construction : Make a serial reader - Work in Progress! (70%) 
+- [x] Change the arduino program construction : Make a serial reader -> print_Midi.py
 - [ ] Describe the modules, never enough description  (70%)
 - [ ] Optimize the arduino matricial usage, reducing the memory used - On it.
-- [ ] Add the printer montage - Need pieces. Almost done the puncher.
+- [ ] Add the printer montage - Still in construction.
 - [ ] Add pictures - Will do with printer done.
 
 ## Requirements
