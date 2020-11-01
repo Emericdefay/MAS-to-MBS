@@ -40,6 +40,7 @@ It creates :
 Then compile the serialReaderPrinter.ino on an Arduino and then <br/><br/> 
 
 > Type: `$ python -c 'import MAS2MBS; MAS2MBS.createSerialMaker("%YourMidiFileName%.mid","%ArduinoPORT%",True)'`.<br/>
+
 It will communicate with your arduino and send notes one by one. This method is still in developpement. (Work)<br/> 
  **Make sure to get the requirements.**
 
