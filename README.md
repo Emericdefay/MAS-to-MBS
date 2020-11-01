@@ -22,6 +22,7 @@ the coordinates for your own Music Paper Sheet you just need to launch the progr
 ## The program
 
 ##### How to use it?
+Use your commands line you be in the root of the MAS-to-MBS file.
 ###### If your Arduino board have enough space (or if you just wanna create the map):
 > Type: `$ python -c 'import MAS2MBS; MAS2MBS.createScript("%YourMidiFileName%.mid")'`.<br/><br/>  
 
