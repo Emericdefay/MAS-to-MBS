@@ -1,6 +1,6 @@
 # MAS-to-MBS
 Transform MIDI file into Arduino Script to print on Music Box Sheet.<br/>
-![alt text](https://github.com/Emericdefay/MAS-to-MBS/blob/main/HIW_Diagram.png?raw=true)
+![HIW_Diagram](https://github.com/Emericdefay/MAS-to-MBS/blob/main/HIW_Diagram.png?raw=true)
 
 ## Todo
 
@@ -34,15 +34,13 @@ It creates :
 Then compile the script_arduino.ino on an Arduino and it will print. Make sure to get the requirements.
 
 ###### If your board doesn't have enough space :
+You need to install pySerial : `pip install pyserial`<br/>
 > Type: `$ python -c 'import serialReaderMaker; serialReaderMaker.start()'`.<br/><br/>  
 
 It creates :  
 - An Arduino's script : "serialReaderPrinter.ino" in arduino/
 <br/>
 Then compile the serialReaderPrinter.ino on your Arduino and then <br/><br/> 
-
-You need to install pySerial : `pip install pyserial`<br/>
-
 > type: `$ python -c 'import MAS2MBS; MAS2MBS.createSerialMaker("%YourMidiFileName%.mid","%ArduinoPORT%",True)'`.<br/>
 
 It will communicate with your arduino and sends notes one by one. This method is still in developpement. (Work)<br/> 
