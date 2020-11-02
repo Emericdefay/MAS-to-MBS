@@ -22,9 +22,9 @@ the coordinates for your own Music Paper Sheet you just need to launch the progr
 
 ## The program
 
-##### How to use it?
+### How to use it?
 Use your commands line you be in the root of the MAS-to-MBS file.
-###### If your Arduino board has enough space (or if you just wanna create the map):
+#### If your Arduino board has enough space (or if you just wanna create the map):
 > Type: `$ python -c 'import MAS2MBS; MAS2MBS.createScript("%YourMidiFileName%.mid")'`.<br/><br/>  
 
 It creates :  
@@ -33,7 +33,7 @@ It creates :
 <br/>
 Then compile the script_arduino.ino on an Arduino and it will print. Make sure to get the requirements.
 
-###### If your board doesn't have enough space :
+#### If your board doesn't have enough space :
 You need to install pySerial : `pip install pyserial`<br/>
 > Type: `$ python -c 'import serialReaderMaker; serialReaderMaker.start()'`.<br/><br/>  
 
