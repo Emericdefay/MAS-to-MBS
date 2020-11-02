@@ -1,6 +1,6 @@
 # MAS-to-MBS
 Transform MIDI file into Arduino Script to print on Music Box Sheet.<br/>
-![alt text](https://github.com/Emericdefay/MAS-to-MBS/HIW_Diagram.png?raw=true)
+![alt text](https://github.com/Emericdefay/MAS-to-MBS/blob/main/HIW_Diagram.png?raw=true)
 
 ## Todo
 
